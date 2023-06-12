@@ -25,3 +25,20 @@ A very small ESP32 development board for any projects
 |18| GPIO21 | RTC_GPIO21, GPIO21 |
 |19| RX | U0RXD, GPIO44, CLK_OUT2 |
 |20| TX | U0TXD, GPIO43, CLK_OUT1 |
+
+Most function in ESP32 can be mapped to any GPIO pins (some functions may be limited to some group of GPIOs)
+Programming guides can be found in 
+<https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32s3/api-reference/peripherals/index.html>
+Only GPIO1-20 have ADC ability, in this board, only pin1, 2, 15, 17 are connected to ADC (GPIO 1, 2, 3, 14)
+
+Programming environment setup:
+There exist many methods to program the ESP32 core. Here is a simplest one using Arduino IDE:
+<https://espressif-docs.readthedocs-hosted.com/projects/arduino-esp32/en/latest/installing.html>
+
+Into flash mode:
+Connect the board to computer via the usb-c connector.
+Press and hold the Download (DL) button.
+Then press and release the reset (RST) button.
+Finally release the Download button.
+
+

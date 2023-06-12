@@ -27,7 +27,7 @@ Single board weight = 5g.
 |19| RX | U0RXD, GPIO44, CLK_OUT2 |
 |20| TX | U0TXD, GPIO43, CLK_OUT1 |
 
-Warning!!! Do not input voltage above 3.6V input signal pins (basically all pins except VMAIN).  
+Warning!!! Do not apply voltage above 3.6V to signal pins (basically all pins except VMAIN).  
 
 Most digital function in ESP32 can be mapped to any GPIO pins (some functions may be limited to some group of GPIOs).  
 Programming guides can be found in  

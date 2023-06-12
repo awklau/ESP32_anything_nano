@@ -1,5 +1,6 @@
 # ESP32_anything_nano
-A very small ESP32 development board for any projects  
+A very small development board for any projects, based on ESP32S3.  
+Single board weight = 5g.  
 
 ![Image](/doc/pin_no.jpg)  
 
@@ -15,7 +16,7 @@ A very small ESP32 development board for any projects
 |8| GPIO45 | GPIO45 |
 |9| GPIO48 | SPICLK_N_DIFF,GPIO48, SUBSPICLK_N_DIFF |
 |10| GPIO47 | SPICLK_P_DIFF,GPIO47, SUBSPICLK_P_DIFF |
-|11| VMAIN | Main Voltage in/out pin. Recommended Input Voltage: 2-16V. If output: voltage from USB port, max 1A|
+|11| VMAIN | Main Voltage in/out pin. Recommended Input Voltage: 2-16V (max. 2A). If output: voltage from USB port, max 1A|
 |12| EN | On/Off pin of the module, pull to ground to switch off (default 100kΩ pullup) |
 |13| 3V3 | 3V3 output pin, max 500mA, for external sensors / reference voltage |
 |14| GND | Ground pin, must be connected to external components |
@@ -26,10 +27,13 @@ A very small ESP32 development board for any projects
 |19| RX | U0RXD, GPIO44, CLK_OUT2 |
 |20| TX | U0TXD, GPIO43, CLK_OUT1 |
 
-Most function in ESP32 can be mapped to any GPIO pins (some functions may be limited to some group of GPIOs).  
+Warning!!! Do not input voltage above 3.6V input signal pins (basically all pins except VMAIN).  
+
+Most digital function in ESP32 can be mapped to any GPIO pins (some functions may be limited to some group of GPIOs).  
 Programming guides can be found in
 <https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32s3/api-reference/peripherals/index.html>.  
 Only GPIO1-20 have ADC ability, in this board, only pin1, 2, 15, 17 are connected to ADC (GPIO 1, 2, 3, 14)  
+This config is sub-optimal but to align with the pinout of ESP32S3-eye (original board from expressif) so that most opensource projects can be directly migrated.  
 
 Programming environment setup:  
 There exist many methods to program the ESP32 core. Here is a simplest one using Arduino IDE:  

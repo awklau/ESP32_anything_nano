@@ -30,10 +30,12 @@ Single board weight = 5g.
 Warning!!! Do not input voltage above 3.6V input signal pins (basically all pins except VMAIN).  
 
 Most digital function in ESP32 can be mapped to any GPIO pins (some functions may be limited to some group of GPIOs).  
-Programming guides can be found in
+Programming guides can be found in  
 <https://docs.espressif.com/projects/esp-idf/en/v4.4/esp32s3/api-reference/peripherals/index.html>.  
 Only GPIO1-20 have ADC ability, in this board, only pin1, 2, 15, 17 are connected to ADC (GPIO 1, 2, 3, 14)  
 This config is sub-optimal but to align with the pinout of ESP32S3-eye (original board from expressif) so that most opensource projects can be directly migrated.  
+
+Using GPIO43 and GPIO44 for UART is preferred but not necessary. All GPIOs can be mapped to UART.   
 
 Programming environment setup:  
 There exist many methods to program the ESP32 core. Here is a simplest one using Arduino IDE:  
